@@ -23,12 +23,17 @@ create table dosen(
 );
 
 drop table if exists pengajaran;
-create table pengajaran(
+drop table if exists matkul;
+create table matkul(
     id serial primary key,
     semester int,
     kodemk varchar(10),
     namamk varchar(45),
-    sks int,
+    sks int
+);
+
+create table pengajaran(
+    matkul_id int references matkul(id),
     nidn varchar(10) references dosen(nidn),
     status smallint default 0
 );
@@ -124,12 +129,19 @@ insert into jabatan_struktural values
 (default,4,5,default,4,'0110217006'),
 (default,5,6,default,5,'0110217007');
 
+insert into matkul values
+(1,1,'IE11006','Organisasi dan Arsitektur Komputer',3),
+(2,1,'NF11001','Pendidikan Agama Islam',2),
+(3,1,'NF11003','Bahasa Indonesia',3),
+(4,1,'IE11001','Dasar Dasar Pemrograman',3),
+(5,2,'IE12001','Basis Data I',3);
+
 insert into pengajaran values
-(default,1,'IE11006','Organisasi dan Arsitektur Komputer',3,'0110217008',1),
-(default,1,'NF11001','Pendidikan Agama Islam',2,'0110217009',default),
-(default,1,'NF11003','Bahasa Indonesia',3,'0110217010',1),
-(default,1,'IE11001','Dasar Dasar Pemrograman',3,'0110217011',default),
-(default,2,'IE12001','Basis Data I',3,'0110217012',1);
+(1,'0110217008',1),
+(2,'0110217009',default),
+(3,'0110217010',1),
+(4,'0110217011',default),
+(5,'0110217012',1);
 
 insert into penelitian values
 (default,2,'Analisa Karakter','Karakter adalah watak, sifat, akhlak ataupun kepribadian yang membedakan seorang individu dengan individu lainnya. Atau karakter dapat di katakan juga sebagai keadaan yang sebenarnya dari dalam diri seorang individu, yang membedakan antara dirinya dengan individu lain.',2,'2013',1,'0110217013'),

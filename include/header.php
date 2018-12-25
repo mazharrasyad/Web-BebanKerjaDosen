@@ -7,7 +7,7 @@
     <meta name="description" content="Snow - Clean & Minimal Portfolio HTML template.">
     <meta name="keywords" content="portfolio, clean, minimal, blog, template, portfolio website">
     <meta name="author" content="nK">
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="assets/images/ficon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- START: Styles -->
     <!-- Google Fonts -->
@@ -22,7 +22,7 @@
             <div class="container">
                 <div class="nk-nav-table">
                     <a href="index.php" class="nk-nav-logo">
-                        <img src="assets/images/logo.png" alt="" width="85">
+                        <img src="assets/images/logo.png" alt="" width="120">
                     </a>
 
                     <ul class="nk-nav nk-nav-right hidden-md-down" data-nav-mobile="#nk-nav-mobile">
@@ -30,16 +30,16 @@
                             <a href="index.php#about">Tentang</a>
                         </li>
                         <li>
-                            <a href="index.php#contact">Jabatan Struktural</a>
+                            <a href="index.php#jabatan_struktural">Jabatan Struktural</a>
                         </li>
                         <li>
-                            <a href="portfolio.php">Pengajaran</a>
+                            <a href="pengajaran.php">Pengajaran</a>
                         </li>
                         <li>
-                            <a href="blog.php">Penelitian</a>
+                            <a href="penelitian.php">Penelitian</a>
                         </li>
                         <li>
-                            <a href="#">PKM</a>
+                            <a href="pkm.php">PKM</a>
                         </li>
                         <li>
                             <a href="index.php#contact">Kontak</a>

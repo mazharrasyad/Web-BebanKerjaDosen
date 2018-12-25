@@ -1,4 +1,4 @@
-<?php include_once 'include/header.php' ?>
+<?php include_once 'include/header.php'; ?>
     <div class="nk-main">
         <div class="container">
             <div class="row">
@@ -250,4 +250,4 @@
         </div>
         <!-- END: Pagination -->
 
-<?php include_once 'include/footer.php' ?>  
+<?php include_once 'include/footer.php'; ?>  
