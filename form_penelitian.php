@@ -30,48 +30,48 @@
                             <div class="row vertical-gap">
                                 <div class="col-md-6">
                                     <?php if (empty($_idedit)){ ?>
-                                        <input type="number" class="form-control required" name="semester" placeholder="Masukkan Semester...">
+                                        <input type="number" class="form-control required" name="semester" placeholder="Masukkan Semester..." required>
                                     <?php } else { ?>
-                                        <input type="number" class="form-control required" name="semester" placeholder="Masukkan Semester..." value="<?php echo $data['semester']?>">
+                                        <input type="number" class="form-control required" name="semester" placeholder="Masukkan Semester..." required value="<?php echo $data['semester']?>">
                                     <?php } ?>                                      
                                 </div>
                                 <div class="col-md-6">                                    
                                     <?php if (empty($_idedit)){ ?>
-                                        <input type="text" class="form-control required" name="judul" placeholder="Masukkan Judul...">
+                                        <input type="text" class="form-control required" name="judul" placeholder="Masukkan Judul..." required>
                                     <?php } else { ?>
-                                        <input type="text" class="form-control required" name="judul" placeholder="Masukkan Judul..." value="<?php echo $data['judul']?>">
+                                        <input type="text" class="form-control required" name="judul" placeholder="Masukkan Judul..." required value="<?php echo $data['judul']?>">
                                     <?php } ?> 
                                 </div>
                             </div>                            
 
                             <div class="nk-gap-1"></div>                            
                             <?php if (empty($_idedit)){ ?>
-                                <textarea class="form-control required" name="deskripsi" rows="8" placeholder="Masukkan Deskripsi..." aria-required="true"></textarea>
+                                <textarea class="form-control required" name="deskripsi" rows="8" placeholder="Masukkan Deskripsi..." aria-required="true" required></textarea>
                             <?php } else { ?>                                
-                                <textarea class="form-control required" name="deskripsi" rows="8" placeholder="Masukkan Deskripsi..." aria-required="true" value="<?php echo $data['deskripsi']?>"></textarea>
+                                <textarea class="form-control required" name="deskripsi" rows="8" placeholder="Masukkan Deskripsi..." aria-required="true" required><?php echo $data['deskripsi']?></textarea>
                             <?php } ?> 
 
                             <div class="nk-gap-1"></div>
                             <div class="row vertical-gap">
                                 <div class="col-md-6">                                    
                                     <?php if (empty($_idedit)){ ?>
-                                        <input type="number" class="form-control required" name="sks" placeholder="Masukkan SKS...">
+                                        <input type="number" class="form-control required" name="sks" placeholder="Masukkan SKS..." required>
                                     <?php } else { ?>                                
-                                        <input type="number" class="form-control required" name="sks" placeholder="Masukkan SKS..." value="<?php echo $data['sks']?>">                                        
+                                        <input type="number" class="form-control required" name="sks" placeholder="Masukkan SKS..." required value="<?php echo $data['sks']?>">                                        
                                     <?php } ?> 
                                 </div>
                                 <div class="col-md-6">
                                     <?php if (empty($_idedit)){ ?>
-                                        <input type="number" class="form-control required" name="rencana_publikasi" placeholder="Masukkan Rencana Publikasi...">
+                                        <input type="number" class="form-control required" name="rencana_publikasi" placeholder="Masukkan Rencana Publikasi..." required>
                                     <?php } else { ?>                                
-                                        <input type="number" class="form-control required" name="rencana_publikasi" placeholder="Masukkan Rencana Publikasi..." value="<?php echo $data['rencana_publikasi']?>">                                        
+                                        <input type="number" class="form-control required" name="rencana_publikasi" placeholder="Masukkan Rencana Publikasi..." required value="<?php echo $data['rencana_publikasi']?>">                                        
                                     <?php } ?>                                    
                                 </div>
                             </div>                            
 
                             <div class="nk-gap-1"></div>
                             <?php if (empty($_idedit)){ ?>
-                                <select class="form-control required" name="nidn">
+                                <select class="form-control required" name="nidn" required>
                                     <option value="">Pilih Nama Dosen</option>
                                     <?php
                                         foreach($rs as $row) {
@@ -80,7 +80,7 @@
                                     ?>
                                 </select>
                             <?php } else { ?>                                
-                                <select class="form-control required" name="nidn">
+                                <select class="form-control required" name="nidn" required>
                                     <option value="">Pilih Nama Dosen</option>
                                     <?php
                                         foreach($rs as $row) {                                            
@@ -99,7 +99,13 @@
                             <div class="nk-gap-1"></div>
                             <div class="nk-form-response-success"></div>
                             <div class="nk-form-response-error"></div>
-                            <input type="submit" class="nk-btn" name="proses" value="Simpan">
+                            <?php if (empty($_idedit)){ ?>
+                                <input type="submit" class="nk-btn" name="proses" value="Simpan">
+                            <?php } else { ?>         
+                                <input type="hidden" name="idedit" value="<?php echo $_idedit?>">                       
+                                <input type="submit" class="nk-btn" name="proses" value="Update">
+                                <input type="submit" class="nk-btn" name="proses" value="Hapus">
+                            <?php } ?>                              
                         </form>
                         <!-- END: Form -->
                     </div>

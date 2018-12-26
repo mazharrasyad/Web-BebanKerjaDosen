@@ -11,7 +11,7 @@ class Penelitian
   }
 
   public function getALL() {
-    $sql= "select * from ".$this->tblName;
+    $sql= "select * from ".$this->tblName." inner join dosen on penelitian.nidn = dosen.nidn";
     $rs = $this->dbh->query($sql);
     return $rs;
   }
@@ -24,21 +24,21 @@ class Penelitian
   }
 
   public function update($data) {
-    $sql = "update penelitian set namamk = ?, nidn = ? where id = ?";
+    $sql = "update ".$this->tblName." set semester = ?, judul = ?, deskripsi = ?, sks = ?, rencana_publikasi = ?, nidn = ? where id = ?";
     $st = $this->dbh->prepare($sql);
     $st->execute($data);
     return $st->rowCount();
   }
 
   public function hapus($id) {
-    $sql = "delete from penelitian where id = ?";
+    $sql = "delete from ".$this->tblName." where id = ?";
     $st = $this->dbh->prepare($sql);
-    $st->execute($data);
+    $st->execute([$id]);
     return $st->rowCount();
   }
 
   public function findByID($id){
-    $sql = "select * from " . $this->tblName . " where id = ?";
+    $sql = "select * from ".$this->tblName." inner join dosen on penelitian.nidn = dosen.nidn where id = ?";
     $st = $this->dbh->prepare($sql);
     $st->execute([$id]);
     return $st->fetch();

@@ -44,10 +44,7 @@
 
                         <!-- START: Post Share -->
                         <div class="nk-post-share">
-                            <strong>Share:</strong>
-                            <a href="#" title="Share page on Twitter" data-share="twitter">Twitter</a>,
-                            <a href="#" title="Share page on Facebook" data-share="facebook">Facebook</a>,                            
-                            <a href="#" title="Share page on Instagram" data-share="instagram">Instagram</a>
+                            <strong>By</strong><?php echo $data['nama']; ?>
                         </div>
                         <!-- END: Post Share -->
                     </div>                    
@@ -61,9 +58,7 @@
         <!-- START: Pagination -->
         <div class="nk-pagination nk-pagination-center">
             <div class="container">
-                <?php echo '<a href="form_penelitian.php?id='.$data['id'].'" class="nk-pagination-prev">Edit</a>'; ?>                                    
-                <a href="form_penelitian.php" class="nk-pagination-center">Tambah Penelitian</a>
-                <?php echo '<a href="form_penelitian.php?id='.$data['id'].'" class="nk-pagination-next">Hapus</a>'; ?>                                    
+                <?php echo '<a href="form_penelitian.php?id='.$data['id'].'" class="nk-pagination-center">Pengaturan</a>'; ?>                                    
             </div>
         </div>
         <!-- END: Pagination -->

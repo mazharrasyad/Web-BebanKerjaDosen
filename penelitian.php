@@ -36,16 +36,16 @@
 
                                 <div class="nk-post-thumb">
                                     <div class="nk-post-category">
-                                        <a href="#"><?=$row['rencana_publikasi'];?></a>
+                                        <a><?=$row['rencana_publikasi'];?></a>
                                     </div>                                                                        
                                 </div>
 
                                 <h2 class="nk-post-title h4"><?=$row['judul'];?></h2>
 
                                 <div class="nk-post-date">
-                                    Semester <?=$row['semester'];?> 
-                                    <br> 
-                                    <?=$row['sks'];?> SKS
+                                    Semester <?=$row['semester'];?><br>
+                                    <?=$row['sks'];?> SKS<br>
+                                    By <?=$row['nama'];?>
                                 </div>
                                 <div class="nk-post-text">
                                     <?php 

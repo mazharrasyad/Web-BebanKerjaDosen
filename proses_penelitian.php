@@ -25,7 +25,7 @@
     }else if($_proses == "Update"){
         $_idedit = $_POST['idedit'];
         $ar_data[] = $_idedit;
-        $row = $obj_penelitian->ubah($ar_data);
+        $row = $obj_penelitian->update($ar_data);
     }else if($_proses == "Hapus"){
         unset($ar_data);
         $_idedit = $_POST['idedit'];
