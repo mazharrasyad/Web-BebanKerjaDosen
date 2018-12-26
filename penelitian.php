@@ -31,7 +31,7 @@
 
                         <?php foreach($rs as $row){ ?>
                         <!-- START: Post -->
-                        <div class="nk-isotope-item" data-filter="<?=$row['rencana_publikasi'];?>">
+                        <div class="nk-isotope-item " data-filter="<?=$row['rencana_publikasi'];?>">
                             <div class="nk-blog-post">
 
                                 <div class="nk-post-thumb">
@@ -43,13 +43,11 @@
                                 <h2 class="nk-post-title h4"><?=$row['judul'];?></h2>
 
                                 <div class="nk-post-date">
-                                    Semester <?=$row['semester'];?><br>
-                                    <?=$row['sks'];?> SKS<br>
                                     By <?=$row['nama'];?>
                                 </div>
                                 <div class="nk-post-text">
                                     <?php 
-                                        echo substr($row['deskripsi'],0,100);
+                                        echo substr($row['deskripsi'],0,500);
                                         echo ' . . . . .<br><a href="single_penelitian.php?id='.$row['id'].'" class="nk-portfolio-item-link">Read More</a>';
                                     ?>
                                 </div>
