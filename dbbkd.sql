@@ -78,6 +78,15 @@ create table jabatan_struktural(
     nidn varchar(10) references dosen(nidn)
 );
 
+drop table if exists kontak;
+create table kontak(
+    id serial primary key,
+    nama varchar(100),
+    email varchar(100),
+    subjek varchar(100),
+    komentar text
+);
+
 insert into prodi values
 (1,'TI','Teknik Informatika','0110217001','Pak Rio'),
 (2,'SI','Sistem Infromasi','0110217002','Bu Amalia');

@@ -42,7 +42,7 @@
                             <a href="pkm.php">PKM</a>
                         </li>
                         <li>
-                            <a href="index.php#contact">Kontak</a>
+                            <a href="kontak.php">Kontak</a>
                         </li>
                     </ul>
 

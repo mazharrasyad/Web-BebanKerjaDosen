@@ -11,7 +11,7 @@ class Penelitian
   }
 
   public function getALL() {
-    $sql= "select * from ".$this->tblName." inner join dosen on penelitian.nidn = dosen.nidn";
+    $sql= "select * from ".$this->tblName." inner join dosen on ".$this->tblName.".nidn = dosen.nidn";
     $rs = $this->dbh->query($sql);
     return $rs;
   }
@@ -38,7 +38,7 @@ class Penelitian
   }
 
   public function findByID($id){
-    $sql = "select * from ".$this->tblName." inner join dosen on penelitian.nidn = dosen.nidn where id = ?";
+    $sql = "select * from ".$this->tblName." inner join dosen on ".$this->tblName.".nidn = dosen.nidn where id = ?";
     $st = $this->dbh->prepare($sql);
     $st->execute([$id]);
     return $st->fetch();
