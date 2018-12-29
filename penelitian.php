@@ -5,7 +5,7 @@
     $rs = $obj_penelitian->getAll();     
 
     $obj_penelitian1 = new Penelitian();
-    $rs1 = $obj_penelitian1->getAll();   
+    $rs1 = $obj_penelitian1->getS();   
 ?>
     <div class="nk-main">
         <div class="container">

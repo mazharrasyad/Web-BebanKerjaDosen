@@ -30,7 +30,7 @@
                             <a href="index.php#about">Tentang</a>
                         </li>
                         <li>
-                            <a href="index.php#jabatan_struktural">Jabatan Struktural</a>
+                            <a href="dosen.php">Dosen</a>
                         </li>
                         <li>
                             <a href="pengajaran.php">Pengajaran</a>

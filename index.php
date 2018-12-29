@@ -18,7 +18,10 @@
             <div class="nk-header-table">
                 <div class="nk-header-table-cell">
                     <div class="container">
-                        <h1 class="nk-title display-3 text-white">Beban Kinerja Dosen Nurul Fikri</h1>
+                        <h1 class="nk-title display-3 text-white">Beban Kinerja Dosen Nurul Fikri
+                            <br><br>
+                            <em class="fw-400">BaseNF</em>
+                        </h1>
                         <div class="nk-gap"></div>
                         <div class="nk-header-text text-white">
                             <div class="nk-gap-4"></div>
@@ -70,7 +73,7 @@
                             </div>
                             <div class="nk-ibox-cont">
                                 <div class="nk-ibox-title"><?php foreach($rj as $roj) { echo $roj['count']; } ?></div>
-                                <div class="nk-ibox-text">Jabatan Struktural</div>
+                                <div class="nk-ibox-text">Dosen</div>
                             </div>
                         </div>
                     </div>
@@ -119,14 +122,14 @@
             <div class="nk-gap-3"></div>
             <div class="container-fluid">
                 <!-- START: Carousel -->
-                <h2 class="text-xs-center display-4 text-white">Jabatan Struktural</h2>
+                <h2 class="text-xs-center display-4 text-white">Program Studi</h2>
                 <div class="nk-carousel nk-carousel-all-visible text-white" data-autoplay="18000" data-dots="true">
                     <div class="nk-carousel-inner">
                         <div>
                             <div>
                                 <blockquote class="nk-blockquote-style-1 text-white">
-                                    <p>Outstanding job and exceeded all expectations. It was a pleasure to work with them on a sizable first project and am looking forward to start the next one asap.</p>
-                                    <cite>Michael Hopkins</cite>
+                                    <p>Teknik Informatika [TI] : disiplin ilmu yang mempelajari transformasi fakta berlambang yaitu data maupun informasi pada mesin berbasis komputasi</p>
+                                    <cite>Kaprodi : Pak Rio</cite>
                                 </blockquote>
                                 <div class="nk-gap-3 mt-10"></div>
                             </div>
@@ -134,17 +137,8 @@
                         <div>
                             <div>
                                 <blockquote class="nk-blockquote-style-1 text-white">
-                                    <p>Outstanding job and exceeded all expectations. It was a pleasure to work with them on a sizable first project and am looking forward to start the next one asap.</p>
-                                    <cite>Michael Hopkins</cite>
-                                </blockquote>
-                                <div class="nk-gap-3 mt-10"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <blockquote class="nk-blockquote-style-1 text-white">
-                                    <p>Outstanding job and exceeded all expectations. It was a pleasure to work with them on a sizable first project and am looking forward to start the next one asap.</p>
-                                    <cite>Michael Hopkins</cite>
+                                    <p>Sistem Informasi [SI] : kombinasi dari teknologi informasi dan aktivitas orang yang menggunakan teknologi itu untuk mendukung operasi dan manajemen</p>
+                                    <cite>Kaprodi : Bu Amalia</cite>
                                 </blockquote>
                                 <div class="nk-gap-3 mt-10"></div>
                             </div>

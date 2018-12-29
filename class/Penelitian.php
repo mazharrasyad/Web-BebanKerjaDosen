@@ -16,6 +16,12 @@ class Penelitian
     return $rs;
   }
 
+  public function getS() {
+    $sql= "select distinct(rencana_publikasi) from ".$this->tblName." order by rencana_publikasi;";
+    $rs = $this->dbh->query($sql);
+    return $rs;
+  }
+
   public function simpan($data) {
     $sql = "insert into ".$this->tblName." (semester,judul,deskripsi,sks,rencana_publikasi,nidn) values (?,?,?,?,?,?)";
     $st = $this->dbh->prepare($sql);
