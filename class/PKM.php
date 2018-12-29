@@ -16,6 +16,12 @@ class PKM
     return $rs;
   }
 
+  public function getS() {
+    $sql= "select distinct(lokasi) from pkm order by lokasi;";
+    $rs = $this->dbh->query($sql);
+    return $rs;
+  }
+
   public function simpan($data) {
     $sql = "insert into ".$this->tblName." (semester,judul,lokasi,sks,nidn) values (?,?,?,?,?)";
     $st = $this->dbh->prepare($sql);

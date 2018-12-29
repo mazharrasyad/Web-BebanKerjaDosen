@@ -1,11 +1,9 @@
 <?php 
     include_once 'include/header.php'; 
-    require_once 'class/PKM.php';    
-    $obj_pkm = new PKM();
-    $rs = $obj_pkm->getAll();     
-
-    $obj_pkm1 = new PKM();
-    $rs1 = $obj_pkm1->getAll();   
+    require_once 'class/Penelitian.php';    
+    $obj_penelitian = new Penelitian();
+    $rs = $obj_penelitian->getAll();     
+    $rs1 = $obj_penelitian->getS();   
 ?>
     <div class="nk-main">
         <div class="container">
@@ -21,47 +19,35 @@
                     <ul class="nk-isotope-filter">                        
                         <li class="active" data-filter="*">All</li>
                         <?php foreach($rs1 as $row1){ ?>
-                            <li data-filter="<?=$row1['lokasi'];?>"><?=$row1['lokasi'];?></li>                        
+                            <li data-filter="<?=$row1['rencana_publikasi'];?>"><?=$row1['rencana_publikasi'];?></li>                        
                         <?php } ?>
                     </ul>
                     <!-- END: Filter -->
 
                     <!-- START: Posts List -->
-                    <div class="nk-blog-isotope nk-isotope nk-isotope-gap nk-isotope-2-cols">
+                    <div class="nk-blog-isotope nk-isotope nk-isotope-gap nk-isotope-1-cols">
 
                         <?php foreach($rs as $row){ ?>
                         <!-- START: Post -->
-                        <div class="nk-isotope-item " data-filter="<?=$row['lokasi'];?>">
+                        <div class="nk-isotope-item " data-filter="<?=$row['rencana_publikasi'];?>">
                             <div class="nk-blog-post">
 
                                 <div class="nk-post-thumb">
                                     <div class="nk-post-category">
-                                        <a><?=$row['lokasi'];?></a>
-                                        <a>
-                                            <?php 
-                                                if ($row['status'] == 0){
-                                                    echo 'Tidak Aktif';                                        
-                                                } 
-                                                else{
-                                                    echo 'Aktif';                                              
-                                                }                                
-                                            ?>  
-                                        </a>
-                                    </div>                        
+                                        <a><?=$row['rencana_publikasi'];?></a>
+                                    </div>                                                                        
                                 </div>
 
                                 <h2 class="nk-post-title h4"><?=$row['judul'];?></h2>
 
-                                <div class="nk-post-text">
-                                    Semester <?=$row['semester'];?> dengan <?=$row['sks'];?> SKS                                      
-                                </div>
-
                                 <div class="nk-post-date">
                                     By <?=$row['nama'];?>
-                                </div>                                
-
+                                </div>
                                 <div class="nk-post-text">
-                                    <?php echo '<a href="form_pkm.php?id='.$row['id'].'" class="nk-pagination-center">Pengaturan</a>'; ?>                                    
+                                    <?php 
+                                        echo substr($row['deskripsi'],0,500);
+                                        echo ' . . . . .<br><a href="single_penelitian.php?id='.$row['id'].'" class="nk-portfolio-item-link">Read More</a>';
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +64,7 @@
 
         <!-- START: Pagination -->
         <div class="nk-pagination nk-pagination-center">
-            <a href="form_pkm.php">Tambah PKM</a>
+            <a href="form_penelitian.php">Tambah Penelitian</a>
         </div>
         <!-- END: Pagination -->
 

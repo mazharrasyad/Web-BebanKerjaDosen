@@ -3,9 +3,7 @@
     require_once 'class/Dosen.php';
     $obj_dosen = new Dosen();
     $rs = $obj_dosen->getAll();  
-    
-    $obj_dosen1 = new Dosen();
-    $rs1 = $obj_dosen1->getS(); 
+    $rs1 = $obj_dosen->getS(); 
 ?>
 
     <div class="nk-main">

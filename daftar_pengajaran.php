@@ -3,9 +3,7 @@
     require_once 'class/Pengajaran.php';
     $obj_pengajaran = new Pengajaran();
     $rs = $obj_pengajaran->getAll();  
-    
-    $obj_pengajaran1 = new Pengajaran();
-    $rs1 = $obj_pengajaran1->getS(); 
+    $rs1 = $obj_pengajaran->getS(); 
 ?>
 
     <div class="nk-main">

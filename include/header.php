@@ -30,19 +30,22 @@
                             <a href="index.php#about">Tentang</a>
                         </li>
                         <li>
-                            <a href="dosen.php">Dosen</a>
+                            <a href="daftar_dosen.php">Dosen</a>
                         </li>
                         <li>
-                            <a href="pengajaran.php">Pengajaran</a>
+                            <a href="daftar_pengajaran.php">Pengajaran</a>
                         </li>
                         <li>
-                            <a href="penelitian.php">Penelitian</a>
+                            <a href="daftar_penelitian.php">Penelitian</a>
                         </li>
                         <li>
-                            <a href="pkm.php">PKM</a>
+                            <a href="daftar_pkm.php">PKM</a>
                         </li>
                         <li>
-                            <a href="kontak.php">Kontak</a>
+                            <a href="daftar_jabatan.php">Jabatan</a>
+                        </li>
+                        <li>
+                            <a href="daftar_kontak.php">Kontak</a>
                         </li>
                     </ul>
 
