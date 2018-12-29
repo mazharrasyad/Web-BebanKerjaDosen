@@ -19,13 +19,13 @@
                     <ul class="nk-isotope-filter">                        
                         <li class="active" data-filter="*">All</li>
                         <?php foreach($rs1 as $row1){ ?>
-                            <li data-filter="<?=$row1['jenis_jabatan_id'];?>"><?=$row1['jenis_jabatan_id'];?></li>                        
+                            <li data-filter="<?=$row1['id'];?>"><?=$row1['nama'];?></li>                        
                         <?php } ?>
                     </ul>
                     <!-- END: Filter -->
 
                     <!-- START: Posts List -->
-                    <div class="nk-blog-isotope nk-isotope nk-isotope-gap nk-isotope-4-cols">
+                    <div class="nk-blog-isotope nk-isotope nk-isotope-gap nk-isotope-1-cols">
 
                         <?php foreach($rs as $row){ ?>
                         <!-- START: Post -->
@@ -34,7 +34,8 @@
 
                                 <div class="nk-post-thumb">
                                     <div class="nk-post-category">
-                                        <a><?=$row['jenis_jabatan_id'];?></a>
+                                        <a><?=$row['nama'];?></a>
+                                        <a>Beban SKS <?=$row['beban_sks']?></a>
                                         <a>
                                             <?php 
                                                 if ($row['status'] == 0){
@@ -51,16 +52,12 @@
                                 <h2 class="nk-post-title h4"><?=$row['judul'];?></h2>
 
                                 <div class="nk-post-text">
-                                    Semester <?=$row['semester'];?> dengan <?=$row['sks'];?> SKS                                      
+                                    <?=$row['semester'];?> Semester dengan <?=$row['sks'];?> SKS                                      
                                 </div>
 
                                 <div class="nk-post-date">
-                                    By <?=$row['nama'];?>
+                                    Dosen <?=$row['dosen'];?>
                                 </div>                                
-
-                                <div class="nk-post-text">
-                                    <?php echo '<a href="form_pkm.php?id='.$row['id'].'" class="nk-pagination-center">Pengaturan</a>'; ?>                                    
-                                </div>
                             </div>
                         </div>
                         <!-- END: Post -->  
@@ -73,11 +70,5 @@
 
             <div class="nk-gap-4"></div>
         </div>
-
-        <!-- START: Pagination -->
-        <div class="nk-pagination nk-pagination-center">
-            <a href="form_pkm.php">Tambah Jabatan</a>
-        </div>
-        <!-- END: Pagination -->
 
 <?php include_once 'include/footer.php'; ?>  
