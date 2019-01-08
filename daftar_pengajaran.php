@@ -49,7 +49,10 @@
                                 <div class="nk-gap-1"></div>            
                                 <div class="nk-portfolio-item-info nk-portfolio-item-info-center text-xs-center">
                                     <div>         
-                                        <a class="nk-portfolio-item-link"><input type="submit" class="nk-btn" name="proses" value="Update"></a>                                                                                               
+                                        <a class="nk-portfolio-item-link">
+                                            <input type="submit" class="nk-btn" name="proses" value="Update">
+                                            <input type="submit" class="nk-btn" name="proses" value="Hapus">
+                                        </a>                                                                                                                                      
                                         <div class="portfolio-item-category">
                                             <?php                                                 
                                                 if ($row['status'] == 0){
@@ -63,7 +66,8 @@
                                                 echo '<br>Kode '.$row['kodemk'].'<br><br>';                                                      
                                                 echo $row['sks'].' SKS<br>';                                              
                                                 echo '<input type="hidden" name="matkul_id" value="'.$row['matkul_id'].'">';                                                                                                                                                 
-                                                echo '<input type="hidden" name="nidn" value="'.$row['nidn'].'">';                                                                                                                                                                                                                                                 
+                                                echo '<input type="hidden" name="nidn" value="'.$row['nidn'].'">';   
+                                                echo '<input type="" name="idedit" value="'.$row['id'].'">';                                                                                                                                                                                                                                                
                                             ?>                                                                            
                                         </div>                                        
                                     </div>                                    

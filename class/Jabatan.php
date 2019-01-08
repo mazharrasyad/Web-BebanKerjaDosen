@@ -16,7 +16,7 @@ class Jabatan
   }
 
   public function getS() {
-    $sql= "select jenis_jabatan.id, nama from jenis_jabatan inner join jabatan_struktural on jenis_jabatan.id = jabatan_struktural.jenis_jabatan_id order by nama;";
+    $sql= "select distinct(status) from jabatan_struktural order by status;";
     $rs = $this->dbh->query($sql);
     return $rs;
   }

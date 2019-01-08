@@ -24,12 +24,13 @@
     }else if($_proses == "Hapus"){
         unset($ar_data);
         $_idedit = $_POST['idedit'];
-        $row = $obj_pengajaran->hapus($_idedit);
+        $_nidn = $_POST['nidn'];
+        $row = $obj_pengajaran->hapus($_idedit,$_nidn);
     }
 
     if ($row == 0){
         echo "Proses Gagal !!!";
     }else{
-        header('Location:pengajaran.php');
+        header('Location:daftar_pengajaran.php');
     }
 ?>

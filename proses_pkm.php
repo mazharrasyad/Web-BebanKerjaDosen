@@ -34,6 +34,6 @@
     if ($row == 0){
         echo "Proses Gagal !!!";
     }else{
-        header('Location:pkm.php');
+        header('Location:daftar_pkm.php');
     }
 ?>

@@ -43,6 +43,6 @@
     if ($row == 0){
         echo "Proses Gagal !!!";
     }else{
-        header('Location:dosen.php');
+        header('Location:daftar_dosen.php');
     }
 ?>

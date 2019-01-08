@@ -24,6 +24,6 @@
     if ($row == 0){
         echo "Proses Gagal !!!";
     }else{
-        header('Location:kontak.php');
+        header('Location:daftar_kontak.php');
     }
 ?>

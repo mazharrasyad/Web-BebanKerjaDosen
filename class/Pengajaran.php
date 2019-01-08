@@ -41,6 +41,13 @@ class Pengajaran
     $st->execute($data);
     return $st->rowCount();
   }
+
+  public function hapus($id,$nidn) {
+    $sql = "delete from ".$this->tblName." where matkul_id = ? and nidn = ?";
+    $st = $this->dbh->prepare($sql);
+    $st->execute([$id,$nidn]);
+    return $st->rowCount();
+  }
 }
 
 ?>

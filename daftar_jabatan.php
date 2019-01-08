@@ -19,7 +19,16 @@
                     <ul class="nk-isotope-filter">                        
                         <li class="active" data-filter="*">All</li>
                         <?php foreach($rs1 as $row1){ ?>
-                            <li data-filter="<?=$row1['id'];?>"><?=$row1['nama'];?></li>                        
+                            <li data-filter="<?=$row1['status'];?>">
+                                <?php
+                                    if ($row1['status'] == 0){
+                                        echo 'Tidak Aktif';                                        
+                                    } 
+                                    else{
+                                        echo 'Aktif';                                              
+                                    }     
+                                ?>
+                            </li>                        
                         <?php } ?>
                     </ul>
                     <!-- END: Filter -->
@@ -29,7 +38,7 @@
 
                         <?php foreach($rs as $row){ ?>
                         <!-- START: Post -->
-                        <div class="nk-isotope-item " data-filter="<?=$row['jenis_jabatan_id'];?>">
+                        <div class="nk-isotope-item " data-filter="<?=$row['status'];?>">
                             <div class="nk-blog-post">
 
                                 <div class="nk-post-thumb">

@@ -36,6 +36,6 @@
     if ($row == 0){
         echo "Proses Gagal !!!";
     }else{
-        header('Location:penelitian.php');
+        header('Location:daftar_penelitian.php');
     }
 ?>
