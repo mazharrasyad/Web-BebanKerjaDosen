@@ -3,6 +3,15 @@
 -- psql dbbkd -U ti1
 
 drop table if exists prodi;
+drop table if exists dosen;
+drop table if exists pengajaran;
+drop table if exists matkul;
+drop table if exists penelitian;
+drop table if exists pkm;
+drop table if exists jabatan_struktural;
+drop table if exists jenis_jabatan;
+drop table if exists kontak;
+
 create table prodi(
     id serial primary key,
     kode varchar(2),
@@ -11,7 +20,6 @@ create table prodi(
     nama_kaprodi varchar(45)
 );
 
-drop table if exists dosen;
 create table dosen(
     nidn varchar(10) primary key,
     nama varchar(45),
@@ -22,11 +30,9 @@ create table dosen(
     user_id int
 );
 
-drop table if exists pengajaran;
-drop table if exists matkul;
 create table matkul(
     id serial primary key,
-    semester int,
+    semestermk int,
     kodemk varchar(10),
     namamk varchar(45),
     sks int
@@ -35,10 +41,10 @@ create table matkul(
 create table pengajaran(
     matkul_id int references matkul(id),
     nidn varchar(10) references dosen(nidn),
+    semester int,
     status smallint default 0
 );
 
-drop table if exists penelitian;
 create table penelitian(
     id serial primary key,
     semester int,
@@ -50,7 +56,6 @@ create table penelitian(
     nidn varchar(10) references dosen(nidn)
 );
 
-drop table if exists pkm;
 create table pkm(
     id serial primary key,
     semester int,
@@ -61,8 +66,6 @@ create table pkm(
     nidn varchar(10) references dosen(nidn)
 );
 
-drop table if exists jabatan_struktural;
-drop table if exists jenis_jabatan;
 create table jenis_jabatan(
     id serial primary key,
     nama varchar(100),
@@ -78,7 +81,6 @@ create table jabatan_struktural(
     nidn varchar(10) references dosen(nidn)
 );
 
-drop table if exists kontak;
 create table kontak(
     id serial primary key,
     nama varchar(100),
@@ -132,22 +134,22 @@ insert into jenis_jabatan values
 (16,'Ketua Program Studi',4);
 
 insert into jabatan_struktural values
-(default,1,2,1,1,'0110217003'),
-(default,2,3,default,2,'0110217004'),
-(default,3,2,1,3,'0110217005'),
-(default,4,3,default,4,'0110217006'),
-(default,5,2,1,5,'0110217007'),
-(default,6,3,default,6,'0110217008'),
-(default,7,2,1,7,'0110217009'),
-(default,8,3,default,8,'0110217010'),
-(default,1,2,1,9,'0110217011'),
-(default,2,3,default,10,'0110217012'),
-(default,3,2,1,11,'0110217013'),
-(default,4,3,default,12,'0110217014'),
-(default,5,2,1,13,'0110217015'),
-(default,6,3,default,14,'0110217016'),
-(default,7,2,1,15,'0110217017'),
-(default,8,3,default,16,'0110217018');
+(default,20161,2,1,1,'0110217003'),
+(default,20161,3,default,2,'0110217004'),
+(default,20162,2,1,3,'0110217005'),
+(default,20162,3,default,4,'0110217006'),
+(default,20171,2,1,5,'0110217007'),
+(default,20171,3,default,6,'0110217008'),
+(default,20172,2,1,7,'0110217009'),
+(default,20172,3,default,8,'0110217010'),
+(default,20181,2,1,9,'0110217011'),
+(default,20181,3,default,10,'0110217012'),
+(default,20182,2,1,11,'0110217013'),
+(default,20182,3,default,12,'0110217014'),
+(default,20191,2,1,13,'0110217015'),
+(default,20191,3,default,14,'0110217016'),
+(default,20192,2,1,15,'0110217017'),
+(default,20192,3,default,16,'0110217018');
 
 insert into matkul values
 (1,1,'NF11001','Pendidikan Agama Islam',2),
@@ -180,74 +182,67 @@ insert into matkul values
 (28,8,'NF40002','Tugas Akhir II',4);
 
 insert into pengajaran values
-(1,'0110217008',1),
-(2,'0110217008',default),
-(3,'0110217009',1),
-(4,'0110217009',default),
-(5,'0110217010',1),
-(6,'0110217010',default),
-(7,'0110217011',1),
-(8,'0110217011',default),
-(9,'0110217012',1),
-(10,'0110217012',default),
-(11,'0110217013',1),
-(12,'0110217013',default),
-(13,'0110217014',1),
-(14,'0110217014',default),
-(15,'0110217015',1),
-(16,'0110217015',default),
-(17,'0110217016',1),
-(18,'0110217016',default),
-(19,'0110217017',1),
-(20,'0110217017',default),
-(21,'0110217018',1),
-(22,'0110217018',default),
-(23,'0110217019',1),
-(24,'0110217019',default),
-(25,'0110217020',1),
-(26,'0110217020',default),
-(27,'0110217003',1),
-(28,'0110217003',default);
+(1,'0110217008',20131,1),
+(2,'0110217008',20131,default),
+(3,'0110217009',20132,1),
+(4,'0110217009',20132,default),
+(5,'0110217010',20141,1),
+(6,'0110217010',20141,default),
+(7,'0110217011',20142,1),
+(8,'0110217011',20142,default),
+(9,'0110217012',20151,1),
+(10,'0110217012',20151,default),
+(11,'0110217013',20152,1),
+(12,'0110217013',20152,default),
+(13,'0110217014',20161,1),
+(14,'0110217014',20161,default),
+(15,'0110217015',20162,1),
+(16,'0110217015',20162,default),
+(17,'0110217016',20171,1),
+(18,'0110217016',20171,default),
+(19,'0110217017',20172,1),
+(20,'0110217017',20172,default),
+(21,'0110217018',20181,1),
+(22,'0110217018',20181,default),
+(23,'0110217019',20182,1),
+(24,'0110217019',20182,default),
+(25,'0110217020',20191,1),
+(26,'0110217020',20191,default),
+(27,'0110217003',20192,1),
+(28,'0110217003',20192,default);
 
 insert into penelitian values
-(default,1,'Analisa Pemrograman','Pemrograman adalah proses menulis, menguji dan memperbaiki (debug), dan memelihara kode yang membangun suatu program komputer. Kode ini ditulis dalam berbagai bahasa pemrograman.',2,'2012',1,'0110217019'),
-(default,1,'Analisa Teknologi','Teknologi adalah keseluruhan sarana untuk menyediakan barang-barang yang diperlukan bagi kelangsungan dan kenyamanan hidup manusia. Penggunaan teknologi oleh manusia diawali dengan pengubahan sumber daya alam menjadi alat-alat sederhana.',2,'2012',default,'0110217020'),
-(default,2,'Analisa Karakter','Karakter adalah watak, sifat, akhlak ataupun kepribadian yang membedakan seorang individu dengan individu lainnya. Atau karakter dapat di katakan juga sebagai keadaan yang sebenarnya dari dalam diri seorang individu, yang membedakan antara dirinya dengan individu lain.',3,'2013',1,'0110217013'),
-(default,2,'Analisa Bahasa Inggris','Bahasa Inggris adalah bahasa ibu ketiga yang paling banyak dituturkan di seluruh dunia, setelah bahasa Mandarin dan bahasa Spanyol. Bahasa Inggris juga digunakan sebagai bahasa kedua dan bahasa resmi oleh Uni Eropa, Negara Persemakmuran, dan Perserikatan Bangsa-Bangsa, serta beragam organisasi lainnya.',3,'2013',default,'0110217014'),
-(default,3,'Analisa Kreatif','Kreatif adalah memiliki daya cipata, mempunyai kemampuan untuk mencipatakan,atau mampu menciptakan sesuatu yang baru, baik berupa gagasan maupun kenyataan yang relatif berbeda dengan apa yang telah ada sebelumnya.',2,'2014',1,'0110217015'),
-(default,3,'Analisa Penelitian','Penelitian adalah suatu usaha atau cara yang sistematis untuk menyelidiki masalah tertentu dengan tujuan mencari jawaban dari masalah yang diteliti dilakukan secara ilmiah.',2,'2014',default,'0110217016'),
-(default,4,'Analisa Website','Website adalah suatu halaman web yang saling berhubungan yang umumnya berada pada peladen yang sama berisikan kumpulan informasi yang disediakan secara perorangan, kelompok, atau organisasi.',3,'2015',1,'0110217017'),
-(default,4,'Analisa Objek','Pemrograman Berorientasi Obyek. OOP/PBO merupakan paradigma pemrograman yang popular saat ini yang telah menggantikan teknik pemrograman berbasis prosedur.',3,'2015',default,'0110217018'),
-(default,5,'Analisa Rekayasa','Rekayasa perangkat lunak adalah satu bidang profesi yang mendalami cara-cara pengembangan perangkat lunak termasuk pembuatan, pemeliharaan, manajemen organisasi pengembanganan perangkat lunak dan manajemen kualitas.',2,'2016',1,'0110217003'),
-(default,5,'Analisa Numerik','numerik adalah sebuah simbol atau kumpulan dari simbol yang merepresentasikan sebuah bilangan.',2,'2016',default,'0110217004'),
-(default,6,'Analisa Komputasi','Komputasi adalah algoritma yang digunakan untuk menemukan suatu cara dalam memecahkan masalah dari sebuah data input. Data input disini adalah sebuah masukan yang berasal dari luar lingkungan sistem.',3,'2017',1,'0110217017'),
-(default,6,'Analisa Mobile','Mobile adalah kata sifat yang berarti dapat bergerak atau dapat digerakkan dengan bebas dan mudah.',3,'2017',default,'0110217018'),
-(default,7,'Analisa Citra','Citra adalah kombinasi antara titik, garis, bidang, dan warna untuk menciptakan suatu imitasi dari suatu objek–biasanya objek fisik atau manusia.',2,'2018',1,'0110217019'),
-(default,7,'Analisa Big Data','Big Data adalah istilah umum untuk segala kumpulan himpunan data dalam jumlah yang sangat besar dan kompleks sehingga menjadikannya sulit untuk ditangani atau di proses jika hanya menggunakan manajemen basis data biasa atau aplikasi pemroses data tradisional.',2,'2018',default,'0110217020'),
-(default,8,'Analisa Cloud','Cloud adalah metafora dari internet, sebagaimana awan yang sering digambarkan di diagram jaringan komputer. Sebagaimana awan dalam diagram jaringan komputer tersebut, awan (cloud) dalam Cloud Computing juga merupakan abstraksi dari infrastruktur kompleks yang disembunyikannya.',3,'2019',1,'0110217005'),
-(default,8,'Analisa Sistem','Sistem adalah sekelompok komponen dan elemen yang digabungkan menjadi satu untuk mencapai tujuan tertentu.',3,'2019',default,'0110217006');
+(default,20161,'Analisa Pemrograman','Pemrograman adalah proses menulis, menguji dan memperbaiki (debug), dan memelihara kode yang membangun suatu program komputer. Kode ini ditulis dalam berbagai bahasa pemrograman.',2,'2012',1,'0110217019'),
+(default,20161,'Analisa Teknologi','Teknologi adalah keseluruhan sarana untuk menyediakan barang-barang yang diperlukan bagi kelangsungan dan kenyamanan hidup manusia. Penggunaan teknologi oleh manusia diawali dengan pengubahan sumber daya alam menjadi alat-alat sederhana.',2,'2012',default,'0110217020'),
+(default,20162,'Analisa Karakter','Karakter adalah watak, sifat, akhlak ataupun kepribadian yang membedakan seorang individu dengan individu lainnya. Atau karakter dapat di katakan juga sebagai keadaan yang sebenarnya dari dalam diri seorang individu, yang membedakan antara dirinya dengan individu lain.',3,'2013',1,'0110217013'),
+(default,20162,'Analisa Bahasa Inggris','Bahasa Inggris adalah bahasa ibu ketiga yang paling banyak dituturkan di seluruh dunia, setelah bahasa Mandarin dan bahasa Spanyol. Bahasa Inggris juga digunakan sebagai bahasa kedua dan bahasa resmi oleh Uni Eropa, Negara Persemakmuran, dan Perserikatan Bangsa-Bangsa, serta beragam organisasi lainnya.',3,'2013',default,'0110217014'),
+(default,20171,'Analisa Kreatif','Kreatif adalah memiliki daya cipata, mempunyai kemampuan untuk mencipatakan,atau mampu menciptakan sesuatu yang baru, baik berupa gagasan maupun kenyataan yang relatif berbeda dengan apa yang telah ada sebelumnya.',2,'2014',1,'0110217015'),
+(default,20171,'Analisa Penelitian','Penelitian adalah suatu usaha atau cara yang sistematis untuk menyelidiki masalah tertentu dengan tujuan mencari jawaban dari masalah yang diteliti dilakukan secara ilmiah.',2,'2014',default,'0110217016'),
+(default,20172,'Analisa Website','Website adalah suatu halaman web yang saling berhubungan yang umumnya berada pada peladen yang sama berisikan kumpulan informasi yang disediakan secara perorangan, kelompok, atau organisasi.',3,'2015',1,'0110217017'),
+(default,20172,'Analisa Objek','Pemrograman Berorientasi Obyek. OOP/PBO merupakan paradigma pemrograman yang popular saat ini yang telah menggantikan teknik pemrograman berbasis prosedur.',3,'2015',default,'0110217018'),
+(default,20181,'Analisa Rekayasa','Rekayasa perangkat lunak adalah satu bidang profesi yang mendalami cara-cara pengembangan perangkat lunak termasuk pembuatan, pemeliharaan, manajemen organisasi pengembanganan perangkat lunak dan manajemen kualitas.',2,'2016',1,'0110217003'),
+(default,20181,'Analisa Numerik','numerik adalah sebuah simbol atau kumpulan dari simbol yang merepresentasikan sebuah bilangan.',2,'2016',default,'0110217004'),
+(default,20182,'Analisa Komputasi','Komputasi adalah algoritma yang digunakan untuk menemukan suatu cara dalam memecahkan masalah dari sebuah data input. Data input disini adalah sebuah masukan yang berasal dari luar lingkungan sistem.',3,'2017',1,'0110217017'),
+(default,20182,'Analisa Mobile','Mobile adalah kata sifat yang berarti dapat bergerak atau dapat digerakkan dengan bebas dan mudah.',3,'2017',default,'0110217018'),
+(default,20191,'Analisa Citra','Citra adalah kombinasi antara titik, garis, bidang, dan warna untuk menciptakan suatu imitasi dari suatu objek–biasanya objek fisik atau manusia.',2,'2018',1,'0110217019'),
+(default,20191,'Analisa Big Data','Big Data adalah istilah umum untuk segala kumpulan himpunan data dalam jumlah yang sangat besar dan kompleks sehingga menjadikannya sulit untuk ditangani atau di proses jika hanya menggunakan manajemen basis data biasa atau aplikasi pemroses data tradisional.',2,'2018',default,'0110217020'),
+(default,20192,'Analisa Cloud','Cloud adalah metafora dari internet, sebagaimana awan yang sering digambarkan di diagram jaringan komputer. Sebagaimana awan dalam diagram jaringan komputer tersebut, awan (cloud) dalam Cloud Computing juga merupakan abstraksi dari infrastruktur kompleks yang disembunyikannya.',3,'2019',1,'0110217005'),
+(default,20192,'Analisa Sistem','Sistem adalah sekelompok komponen dan elemen yang digabungkan menjadi satu untuk mencapai tujuan tertentu.',3,'2019',default,'0110217006');
 
 insert into pkm values
-(default,1,'Pemanfaatan Cobit','Jakarta',2,1,'0110217018'),
-(default,1,'Pemanfaatan Java','Jakarta',2,default,'0110217019'),
-(default,2,'Pemanfaatan Web','Bogor',3,1,'0110217020'),
-(default,2,'Pemanfaatan Open Source','Bogor',3,default,'0110217003'),
-(default,3,'Pemanfaatan Matematika','Depok',2,1,'0110217004'),
-(default,3,'Pemanfaatan Bahasa','Depok',2,default,'0110217005'),
-(default,4,'Pemanfaatan Pemrograman','Tangerang',3,1,'0110217006'),
-(default,4,'Pemanfaatan Teknologi','Tangerang',3,default,'0110217007'),
-(default,5,'Pemanfaatan Informasi','Bekasi',2,1,'0110217008'),
-(default,5,'Pemanfaatan Arsitektur','Bekasi',2,default,'0110217009'),
-(default,6,'Pemanfaatan Diskrit','Bandung',3,1,'0110217010'),
-(default,6,'Pemanfaatan Sistem Operasi','Bandung',3,default,'0110217003'),
-(default,7,'Pemanfaatan Basis Data','Surabaya',2,1,'0110217004'),
-(default,7,'Pemanfaatan Penelitian','Surabaya',2,default,'0110217011'),
-(default,8,'Pemanfaatan Warehouse','Semarang',3,1,'0110217012'),
-(default,8,'Pemanfaatan Otomata','Semarang',3,default,'0110217013');
-
-select *, 
-jenis_jabatan.nama as jabatan, 
-dosen.nama as dosen 
-from jabatan_struktural 
-inner join dosen on dosen.nidn = jabatan_struktural.nidn 
-inner join jenis_jabatan on jenis_jabatan.id = jabatan_struktural.jenis_jabatan_id;
+(default,20161,'Pemanfaatan Cobit','Jakarta',2,1,'0110217018'),
+(default,20161,'Pemanfaatan Java','Jakarta',2,default,'0110217019'),
+(default,20162,'Pemanfaatan Web','Bogor',3,1,'0110217020'),
+(default,20162,'Pemanfaatan Open Source','Bogor',3,default,'0110217003'),
+(default,20171,'Pemanfaatan Matematika','Depok',2,1,'0110217004'),
+(default,20171,'Pemanfaatan Bahasa','Depok',2,default,'0110217005'),
+(default,20172,'Pemanfaatan Pemrograman','Tangerang',3,1,'0110217006'),
+(default,20172,'Pemanfaatan Teknologi','Tangerang',3,default,'0110217007'),
+(default,20181,'Pemanfaatan Informasi','Bekasi',2,1,'0110217008'),
+(default,20181,'Pemanfaatan Arsitektur','Bekasi',2,default,'0110217009'),
+(default,20182,'Pemanfaatan Diskrit','Bandung',3,1,'0110217010'),
+(default,20182,'Pemanfaatan Sistem Operasi','Bandung',3,default,'0110217003'),
+(default,20191,'Pemanfaatan Basis Data','Surabaya',2,1,'0110217004'),
+(default,20191,'Pemanfaatan Penelitian','Surabaya',2,default,'0110217011'),
+(default,20192,'Pemanfaatan Warehouse','Semarang',3,1,'0110217012'),
+(default,20192,'Pemanfaatan Otomata','Semarang',3,default,'0110217013');

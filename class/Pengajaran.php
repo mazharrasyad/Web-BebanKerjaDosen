@@ -17,7 +17,7 @@ class Pengajaran
   }
 
   public function getS() {
-    $sql= "select distinct(semester) from matkul order by semester;";
+    $sql= "select distinct(semester) from pengajaran order by semester;";
     $rs = $this->dbh->query($sql);
     return $rs;
   }
@@ -29,7 +29,7 @@ class Pengajaran
   }
 
   public function simpan($data) {
-    $sql = "insert into ".$this->tblName." (matkul_id,nidn) values (?,?);";
+    $sql = "insert into ".$this->tblName." (matkul_id,nidn,semester) values (?,?,?);";
     $st = $this->dbh->prepare($sql);
     $st->execute($data);
     return $st->rowCount();

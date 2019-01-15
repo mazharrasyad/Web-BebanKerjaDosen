@@ -53,12 +53,20 @@
 
                             <div class="nk-gap-1"></div>
                             <div class="row vertical-gap">
-                                <div class="col-md-6">                                    
+                                <div class="col-md-6" align="center">                                    
                                     <?php if (empty($_idedit)){ ?>
-                                        <input type="number" class="form-control required" name="sks" placeholder="Masukkan SKS..." required>
-                                    <?php } else { ?>                                
-                                        <input type="number" class="form-control required" name="sks" placeholder="Masukkan SKS..." required value="<?php echo $data['sks']?>">                                        
-                                    <?php } ?> 
+                                        <input type="radio" name="sks" value="2" required>&ensp;&ensp;<strong>2 SKS</strong>
+                                        <hr>
+                                        <input type="radio" name="sks" value="3" required>&ensp;&ensp;<strong>3 SKS</strong>
+                                    <?php } else { if ($data['sks'] == 2) { ?>                                
+                                        <input type="radio" name="sks" value="2" required checked>&ensp;&ensp;<strong>2 SKS</strong>
+                                        <hr>
+                                        <input type="radio" name="sks" value="3" required>&ensp;&ensp;<strong>3 SKS</strong>
+                                    <?php } else { ?>                                         
+                                        <input type="radio" name="sks" value="2" required>&ensp;&ensp;<strong>2 SKS</strong>
+                                        <hr>
+                                        <input type="radio" name="sks" value="3" required checked>&ensp;&ensp;<strong>3 SKS</strong>
+                                    <?php }} ?>  
                                 </div>
                                 <div class="col-md-6">
                                     <?php if (empty($_idedit)){ ?>

@@ -75,7 +75,7 @@
                                         <input type="radio" name="prodi_id" value="1" required>&ensp;&ensp;<strong>Teknik Informatika</strong>
                                         <hr>
                                         <input type="radio" name="prodi_id" value="2" required>&ensp;&ensp;<strong>Sistem Informasi</strong>
-                                        <?php } else { if ($data['prodi_id'] == '1') { ?>                                
+                                    <?php } else { if ($data['prodi_id'] == '1') { ?>                                
                                         <input type="radio" name="prodi_id" value="1" required checked>&ensp;&ensp;<strong>Teknik Informatika</strong>
                                         <hr>
                                         <input type="radio" name="prodi_id" value="2" required>&ensp;&ensp;<strong>Sistem Informasi</strong>

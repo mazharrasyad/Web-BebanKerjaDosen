@@ -79,8 +79,15 @@
                                             ?>
                                         </select>
                                     <?php } ?>
-                                </div>
+                                </div>                                                                
                             </div> 
+
+                            <div class="nk-gap-1"></div>
+                            <?php if (empty($_idedit)){ ?>
+                                <input type="number" class="form-control required" name="semester" placeholder="Masukkan Semester..." required>
+                            <?php } else { ?>
+                                <input type="number" class="form-control required" name="semester" placeholder="Masukkan Semester..." required value="<?php echo $data['semester']?>">
+                            <?php } ?>  
 
                             <div class="nk-gap-1"></div>
                             <div class="nk-form-response-success"></div>

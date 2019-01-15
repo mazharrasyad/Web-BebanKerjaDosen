@@ -16,8 +16,8 @@
             </div>
             <ul class="nk-isotope-filter">
                 <li class="active" data-filter="*">All</li>                
-                <?php foreach($rs1 as $row1){ ?>
-                    <li data-filter="<?=$row1['semester'];?>">Semester <?=$row1['semester'];?></li>                        
+                <?php foreach($rs1 as $row1){ ?>                   
+                    <li data-filter="<?=$row1['semester'];?>"><?=$row1['semester'];?></li>                                              
                 <?php } ?>
             </ul>
             <!-- END: Filter -->
@@ -27,22 +27,10 @@
                         <div class="nk-isotope-item" data-filter="<?=$row['semester'];?>">
                             <div class="nk-portfolio-item nk-portfolio-item-square nk-portfolio-item-info-style-1">                                                                
                                 <div class="nk-portfolio-item-image">                            
-                                    <?php if($row['semester'] == 1){ ?>
+                                    <?php if($row['semester'] % 2 == 1){ ?>
                                         <div style="background-image: url('assets/images/semester1.png');"></div>
-                                    <?php }else if($row['semester'] == 2){ ?>
-                                        <div style="background-image: url('assets/images/semester2.png');"></div>                                
-                                    <?php }else if($row['semester'] == 3){ ?>
-                                        <div style="background-image: url('assets/images/semester3.png');"></div>                                
-                                    <?php }else if($row['semester'] == 4){ ?>
-                                        <div style="background-image: url('assets/images/semester4.png');"></div>                                
-                                    <?php }else if($row['semester'] == 5){ ?>
-                                        <div style="background-image: url('assets/images/semester5.png');"></div>                                
-                                    <?php }else if($row['semester'] == 6){ ?>
-                                        <div style="background-image: url('assets/images/semester6.png');"></div>                                
-                                    <?php }else if($row['semester'] == 7){ ?>
-                                        <div style="background-image: url('assets/images/semester7.png');"></div>                                
-                                    <?php }else if($row['semester'] == 8){ ?>
-                                        <div style="background-image: url('assets/images/semester8.png');"></div>
+                                    <?php }else if($row['semester'] % 2 == 0){ ?>
+                                        <div style="background-image: url('assets/images/semester2.png');"></div>
                                     <?php } ?>
                                 </div>
                                 <?php echo '<p style="text-align: center; font-weight: bold; margin: 4px 4px;">'.$row['namamk'].'<br>'.$row['nama'].'</p>';?>                        
@@ -67,7 +55,7 @@
                                                 echo $row['sks'].' SKS<br>';                                              
                                                 echo '<input type="hidden" name="matkul_id" value="'.$row['matkul_id'].'">';                                                                                                                                                 
                                                 echo '<input type="hidden" name="nidn" value="'.$row['nidn'].'">';   
-                                                echo '<input type="" name="idedit" value="'.$row['id'].'">';                                                                                                                                                                                                                                                
+                                                echo '<input type="hidden" name="idedit" value="'.$row['id'].'">';                                                                                                                                                                                                                                                
                                             ?>                                                                            
                                         </div>                                        
                                     </div>                                    

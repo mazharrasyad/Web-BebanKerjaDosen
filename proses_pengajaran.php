@@ -10,8 +10,10 @@
     if($_proses == "Simpan"){
         $_matkul_id = $_POST['matkul_id'];
         $_nidn = $_POST['nidn'];
+        $_semester = $_POST['semester'];
         $ar_data[] = $_matkul_id;
         $ar_data[] = $_nidn;
+        $ar_data[] = $_semester;
         $row = $obj_pengajaran->simpan($ar_data);
     }else if($_proses == "Update"){
         $_status = $_POST['status'];
