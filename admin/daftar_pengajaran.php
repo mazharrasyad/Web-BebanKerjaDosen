@@ -69,4 +69,10 @@
             <div class="nk-gap-4"></div>
         </div>
 
+        <!-- START: Pagination -->
+        <div class="nk-pagination nk-pagination-center">
+            <a href="form_pengajaran.php">Tambah Pengajaran</a>
+        </div>
+        <!-- END: Pagination -->
+
 <?php include_once 'include/footer.php' ?>  

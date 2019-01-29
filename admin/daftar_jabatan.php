@@ -1,9 +1,9 @@
 <?php 
     include_once 'include/header.php'; 
-    require_once 'class/PKM.php';    
-    $obj_pkm = new PKM();
-    $rs = $obj_pkm->getAll(); 
-    $rs1 = $obj_pkm->getS();   
+    require_once 'class/Jabatan.php';    
+    $obj_jabatan = new Jabatan();
+    $rs = $obj_jabatan->getAll();     
+    $rs1 = $obj_jabatan->getS();
 ?>
     <div class="nk-main">
         <div class="container">
@@ -19,22 +19,32 @@
                     <ul class="nk-isotope-filter">                        
                         <li class="active" data-filter="*">All</li>
                         <?php foreach($rs1 as $row1){ ?>
-                            <li data-filter="<?=$row1['lokasi'];?>"><?=$row1['lokasi'];?></li>                        
+                            <li data-filter="<?=$row1['status'];?>">
+                                <?php
+                                    if ($row1['status'] == 0){
+                                        echo 'Tidak Aktif';                                        
+                                    } 
+                                    else{
+                                        echo 'Aktif';                                              
+                                    }     
+                                ?>
+                            </li>                        
                         <?php } ?>
                     </ul>
                     <!-- END: Filter -->
 
                     <!-- START: Posts List -->
-                    <div class="nk-blog-isotope nk-isotope nk-isotope-gap nk-isotope-2-cols">
+                    <div class="nk-blog-isotope nk-isotope nk-isotope-gap nk-isotope-1-cols">
 
                         <?php foreach($rs as $row){ ?>
                         <!-- START: Post -->
-                        <div class="nk-isotope-item " data-filter="<?=$row['lokasi'];?>">
+                        <div class="nk-isotope-item " data-filter="<?=$row['status'];?>">
                             <div class="nk-blog-post">
 
                                 <div class="nk-post-thumb">
                                     <div class="nk-post-category">
-                                        <a><?=$row['lokasi'];?></a>
+                                        <a><?=$row['nama'];?></a>
+                                        <a>Beban SKS <?=$row['beban_sks']?></a>
                                         <a>
                                             <?php 
                                                 if ($row['status'] == 0){
@@ -51,16 +61,12 @@
                                 <h2 class="nk-post-title h4"><?=$row['judul'];?></h2>
 
                                 <div class="nk-post-text">
-                                    Semester <?=$row['semester'];?> dengan <?=$row['sks'];?> SKS                                      
+                                    <?=$row['semester'];?> Semester dengan <?=$row['sks'];?> SKS                                      
                                 </div>
 
                                 <div class="nk-post-date">
-                                    By <?=$row['nama'];?>
+                                    Dosen <?=$row['dosen'];?>
                                 </div>                                
-
-                                <div class="nk-post-text">
-                                    <?php echo '<a href="form_pkm.php?id='.$row['id'].'" class="nk-pagination-center">Pengaturan</a>'; ?>                                    
-                                </div>
                             </div>
                         </div>
                         <!-- END: Post -->  

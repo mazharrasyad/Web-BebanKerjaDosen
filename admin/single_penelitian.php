@@ -55,4 +55,12 @@
             </div>
         </div>
 
+        <!-- START: Pagination -->
+        <div class="nk-pagination nk-pagination-center">
+            <div class="container">
+                <?php echo '<a href="form_penelitian.php?id='.$data['id'].'" class="nk-pagination-center">Pengaturan</a>'; ?>                                    
+            </div>
+        </div>
+        <!-- END: Pagination -->
+
 <?php include_once 'include/footer.php'; ?>  

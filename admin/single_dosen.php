@@ -130,4 +130,12 @@
 
         <img class="nk-img-fit" src="assets/images/lecture.jpg">
 
+        <!-- START: Pagination -->
+        <div class="nk-pagination nk-pagination-center">
+            <div class="container">
+                <?php echo '<a href="form_dosen.php?nidn='.$data['nidn'].'" class="nk-pagination-center">Pengaturan</a>'; ?>                                    
+            </div>
+        </div>
+        <!-- END: Pagination -->
+
 <?php include_once 'include/footer.php'; ?>  

@@ -48,7 +48,7 @@
                             <a href="daftar_kontak.php">Kontak</a>
                         </li>
                         <li>
-                            <a href="admin/index.php">Login</a>
+                            <a href="../index.php">Logout</a>
                         </li>
                     </ul>
 
